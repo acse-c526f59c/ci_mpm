@@ -1,8 +1,14 @@
+#from Lecture06.ci_mpm.simple_functions.functions1 import calculate_sin
+
 import pytest
+
+import numpy as np
 
 from simple_functions import my_sum
 
 from simple_functions import factorial
+
+from simple_functions.functions1 import calculate_sin
 
 
 class TestSimpleFunctions(object):
@@ -25,4 +31,15 @@ class TestSimpleFunctions(object):
     def test_factorial(self, number, expected):
         '''Test our factorial function'''
         answer = factorial(number)
+        assert answer == expected
+
+
+    @pytest.mark.parametrize('x, expected', [
+        (0, 0),
+        (np.pi, 0),
+        (np.pi/2, 1)
+    ])
+    def test_sin(self, x, expected):
+        '''Test our sin function'''
+        answer = calculate_sin(x)
         assert answer == expected
