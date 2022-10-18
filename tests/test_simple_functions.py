@@ -2,6 +2,8 @@ import pytest
 
 from simple_functions import my_sum
 
+from simple_functions import factorial
+
 
 class TestSimpleFunctions(object):
     '''Class to test our simple functions are working correctly'''
