@@ -36,7 +36,7 @@ class TestSimpleFunctions(object):
 
     @pytest.mark.parametrize('x, expected', [
         (0, 0),
-        (np.pi, 0),
+        (3*np.pi, -1),
         (np.pi/2, 1)
     ])
     def test_sin(self, x, expected):
